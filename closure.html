@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>show output of Closures function</h1>
+
+    <input type="button" value="Add to cart" id="btn" onclick="clickme()">
+
+    <P id="demo"></P>
+
+</body>
+<script>
+
+    // function  calculate(){
+
+
+    //     var a = 10;
+    //     var b = 20;
+    //     var a = a+b;
+    //     var c = 20;
+
+    //     function printA(){
+    //         a = a+b;
+    //         document.write(a);
+    //     }
+
+    //     function printB(){
+    //         a = a+b;
+    //         document.write(a);
+    //     }
+
+    //     function printC(){
+    //         a = a+b;
+    //         document.write(a);
+    //     }
+
+    //     return printA;
+    // }
+    //  var result = calculate();
+    //  result();
+
+
+    //  -----------------------------MAKING A PROJECT-------------------------
+
+
+    // output would be 
+
+    // total order = 1
+    // total order = 2
+    // total order = 3
+    // total order = 4
+
+    // ----------------------1--------------------
+
+
+    let count = 0;
+      let text= function () {
+         return function (){
+            count += 1;
+            var sum =" Total order ="+ count;
+            return sum;
+           }  
+}
+        document.getElementById("demo").innerText += text()();
+
+
+
+    //   ---------------------------2-------------------
+
+    // let genrateOrder = function () {
+    // let count = 0;
+    //     function abc() {
+    //         count += 1;
+    //         return " total order = "+count;
+    //     }
+    //     return abc;
+    // }
+    // var result = genrateOrder();
+
+    // for(i=0; i<3;i++){
+    // document.getElementById("demo").innerText +=result();
+    // }
+
+</script>
+
+</html>
