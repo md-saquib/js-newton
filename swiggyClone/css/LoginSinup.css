@@ -1,0 +1,95 @@
+.login{
+    width: 0rem;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
+    transition: all 0.5s;
+    overflow-x: hidden;
+    padding-top: 5rem;
+}
+.login-closetab{
+    position: absolute;
+    top: 3rem;
+    right: 30rem;
+    font-size: 3rem;
+    transition: all 0.5s;
+}
+.login-closetab:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.login>div>img:nth-child(2){
+    height: 8rem;
+}
+.login>div{
+    display: flex;
+    justify-content: space-evenly;
+}
+.login>div>div:first-child>div:first-child{
+    font-size: 3rem;
+    font-weight: 700;
+    padding: 1rem;
+}
+.login>div>div:first-child>div:last-child{
+    padding: 0rem 1rem 1rem 1rem;
+}
+.login>form:nth-child(2){
+    margin: 2rem 0rem 0rem 6rem ;
+    /* border: 1px solid red; */
+}
+.form-label{
+    padding: 2rem;
+}
+/* -------------------css for search bar---------------- */
+
+.search-closetab{
+    position: absolute;
+    top: 2rem;
+    right: 20rem;
+    font-size: 3rem;
+    transition: all 0.5s;   
+}
+.search-closetab:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+#search-bar{
+    background-color: rgb(255, 255, 255);
+    height: 90vh;
+   position: fixed;
+   width: 100%;
+   top: 5rem;
+   overflow-x:hidden;
+   z-index: 1;
+   display: none;
+
+
+}
+
+/* ---------------card me add to cart ki css------------ */
+
+.add-to-cart{
+    background-color: goldenrod;
+    border-radius: 0.5rem;
+    position: absolute;
+    top: 10px;
+    right: -30px;
+    padding:1rem;
+    cursor: pointer;
+    transition: all 0.8s;
+    width: 0rem;
+}
+.add-to-cart:hover{
+    transform: scale(1.1);
+}
+.star{
+    padding-top: 4px;
+}
+.shadow-lg{
+    position: relative;
+}
+

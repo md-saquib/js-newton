@@ -1,0 +1,51 @@
+.slidepanel{
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    padding-top: 5rem;
+    overflow-x: hidden;
+    background-color: #ffffff;
+    transition: all 0.5s;
+}
+.closetab{
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    font-size: 3rem;
+    transition: all 0.5s;
+}
+.closetab:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.slidepanel>div{
+    margin: 2rem 3rem;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+#location{
+    width: 100%;
+    padding: 1.1rem;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 7px black;
+}
+.select-gps{
+    display: flex;
+    padding: 1.3rem;
+}
+.gps-logo{
+    padding-top: 1.3rem ;
+}
+.gps-text{
+    padding-left: 1rem;
+}
+.gps-text>p:first-child>a{
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: black;
+}

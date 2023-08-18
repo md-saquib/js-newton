@@ -1,0 +1,48 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-size: 0.9rem;
+    font-family: "open sans",sans-serif;
+}
+.body1{
+    background-color: rgb(234, 234, 234);
+    height: 100vh;
+}
+
+.header{
+    display: flex;
+    background-color: #5775f8;
+    justify-content: space-around;
+    padding-top: 1rem;
+}
+
+#togler{
+    color: #d4700b;
+    font-size: 2rem;
+    padding-top: .6rem;
+    transition: all 0.5s;
+}
+#togler:hover{
+    cursor: pointer;
+}
+.header>p>a>i{
+    padding: 0.6rem;
+    font-size: 1rem;
+}
+.header>p:nth-child(2){
+    width: 20rem;
+    margin-right: 11rem;
+}
+.navstyle{
+    padding: 0.6rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.navstyle:hover{
+    color: #d4700b;
+}
+
+

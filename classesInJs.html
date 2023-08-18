@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classes in Javascript</title>
+</head>
+<body>
+    
+</body>
+<script>
+    
+    class React{
+
+        static Yob="1999"  // static variable and function only access with  class name.property name..
+        yob="1999"
+
+        constructor(name,stream){
+            this.myname=name;
+            this.mystream=stream;
+
+        }
+        // agecalculator(){
+        //     return new Date().getFullYear() - this.yob;
+        // }
+
+        static agecalculator(){
+            console.log(this.yob);
+            return new Date().getFullYear() - this.yob;
+        }
+    }
+    let saquib = new React("saquib","developer");
+    console.log(saquib.myname);
+    console.log(saquib.mystream);
+    
+
+    // console.log(saquib.agecalculator());
+
+    console.log(React.Yob);
+
+    console.log(React.agecalculator());
+
+
+</script>
+</html>

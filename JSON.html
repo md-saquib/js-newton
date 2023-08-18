@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // JSON--> javascript object notation
+
+
+    // this is javascript object
+    let obj1 = {
+        name: "saquib",
+        age: 24,
+        surname: "ansari",
+        state: "Bihar",
+        postalcode: 854105,
+        maried: false,
+        hobbies: ["pubg", "trading"],
+        relationship: null,
+        infoo: {
+            weight: 72,
+            height: 5.8
+        }
+
+    }
+    // console.log(obj1);
+
+    // here converted into JSON object
+
+    // let jsonobject = JSON.stringify(obj1);
+
+    // console.log(jsonobject);
+
+
+    // // again json obj converted into js obj
+
+    // let jsobj = JSON.parse(jsonobject);
+
+    // console.log(jsobj);
+
+    //  json take only six data type
+
+    // 1. array
+    // 2. object
+    // 3. number
+    // 4. string
+    // 5. boolean
+    // 6. null
+
+
+    // lets starts new topic  AJAX
+
+    // Asyncronuse javascript and XML
+
+    // this is older way to do this 
+
+
+    // get data from api through fetch()
+
+    // fetch("https://jsonplaceholder.typicode.com/users")
+
+    // // by defaul GET method run internally
+    //     .then((data) => {
+    //         console.log(data);
+    //         return data.json();
+    //     })
+    //     .then((data) => {
+    //         console.log(data);
+    //         console.log(data[1].name);
+    //         let body = document.body;
+    //         let element = document.createElement("p");
+    //         body.appendChild(element)
+
+    //         element.innerText = data[2].name
+    //     })
+
+
+     // Methods of Api
+
+//      Method	Description
+// GET  ---->	Retrieve information about the REST API resource
+// POST	---->   Create a REST API resource
+// PUT	---->   Update a REST API resource
+// DELETE--->	Delete a REST API resource or related component
+
+
+fetch("https://jsonplaceholder.typicode.com/users",{
+    method:"POST",
+    body: JSON.stringify(obj1),
+    headers:{
+        "Content-Type": "application/json"
+    }
+})
+.then((data)=>{
+    return data.json();
+})
+.then((data)=>{
+    console.log(data);
+})
+.catch((error)=>{
+    console.log(error);
+})
+
+
+</script>
+
+</html>

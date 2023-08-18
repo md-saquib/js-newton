@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype_doubt</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    function saquib(name,cast,yearOfBirth) {
+        this.name = name;
+        this.cast = cast;
+        this.yearOfBirth = yearOfBirth;
+        saquib.prototype.yearOfBirth=this.yearOfBirth;
+    }
+    let micro = new saquib("saquib","Muslim","1991");
+
+    function ansari() {
+
+    }
+
+    ansari.prototype = Object.create(saquib.prototype)
+
+    ansari.prototype.ageCalculator=function(){
+        return 2023 - this.yearOfBirth;
+    }
+
+
+    let dhoka = new ansari();
+
+    console.log(dhoka);
+    console.log(dhoka.ageCalculator())
+    console.log(dhoka.yearOfBirth);
+
+
+
+    obj1 ={
+        name1: "saquib",
+        age: "24",
+        print:function(){
+            console.log("hello how are you ..")
+        }
+    }
+
+    obj2 ={
+        name2:"kaif",
+        age:"23"
+    }
+     
+    let arr =[1,2,4];
+    console.log(obj1);
+    console.log(obj2);
+    console.log(obj1.__proto__);   //when u use proto with object it will get prototype
+                                    // of same object. it is act as link.
+    console.log(Object.prototype);//when u use proto with object it will get prototype
+                                    // of whole object.
+    console.log(Object.__proto__);  //ƒ () { [native code] }
+    console.log(Array.prototype);  //when you use prototype array and function it will return method()
+    console.log(Array.__proto__);   //ƒ () { [native code] }
+
+
+    Object.setPrototypeOf(obj2,obj1);   //object link like this
+
+    // obj2.__proto__=obj1;       // you can link object like this ....
+
+    console.log(obj2)
+
+
+</script>
+
+</html>

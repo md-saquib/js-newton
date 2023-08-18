@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>abstraction</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    function abstract(name,yearOfBirth,address){
+        this.name=name;
+        this.yearOfBirth=yearOfBirth;
+        this.address=address;
+
+        // function return directly 
+        this.age1=function(){
+            return 2023 -yearOfBirth;
+        }
+
+        // Abstraction 
+        // function din't return directly 
+        let age =function(){
+            return 2023 -yearOfBirth;
+        }
+
+        this.age1=age;
+
+    }
+
+    let sohail= new abstract("Tharki" ,1993,"Amroha")
+        console.log(sohail.name);
+        console.log(sohail.yearOfBirth);
+        console.log(sohail.address);
+        console.log(sohail.age1());
+        console.log(sohail.age1());
+
+        
+</script>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math_method</title>
+</head>
+<body>
+    
+<p id="demo"></p>
+
+    
+</body>
+<script>
+  
+  let x=document.getElementById("demo");
+
+x.innerText= Math.round(-4.4);
+
+x.innerText= Math.round(-4.8);
+
+x.innerText= Math.round(-4.5);
+
+// Math.ceil() rounds a number up to its nearest integer:
+
+x.innerText = Math.ceil(4.1)
+
+x.innerText = Math.ceil(4.5)
+
+x.innerText = Math.ceil(4.9)
+
+// Math.floor(x) returns the value of x rounded down to its nearest integer:
+
+x.innerText=Math.floor(4.9)
+
+x.innerText=Math.floor(4.5)
+
+x.innerText=Math.floor(4.1)
+
+// Math.pow(x, y) returns the value of x to the power of y:
+
+
+x.innerText=Math.pow(4,3);
+
+// Math.trunc(x) returns the integer part of x:
+
+x.innerText=Math.trunc(4.9)
+
+x.innerText=Math.trunc(5.9)
+
+x.innerText=Math.trunc(5.0)
+
+
+//very important 
+// Math.random() returns a random number between 0 (inclusive), and 1 (exclusive):
+
+x.innerText=Math.random();  //produced random number
+
+x.innerText=Math.trunc(Math.random()*1000000); //for making otp also
+
+// Math.min() and Math.max() can be used to find the lowest or highest value in a list of arguments:
+
+
+x.innerText=Math.max(10,21,2,31,45,4,1);
+
+x.innerText=Math.min(10,21,2,31,45,4,1);
+
+let arr=[1,4,2,34,32,46,3,2,1,];
+
+x.innerText = Math.max(...arr);//find grater num in array with spread operator
+
+x.innerText = Math.min(...arr);//find smallest num in array with spread operator
+
+console.log(...arr);
+
+let arrayone =["hello","yassi","klash",...arr]//we can add two array from spread operator 
+
+x.innerText = arrayone;
+
+</script>
+</html>

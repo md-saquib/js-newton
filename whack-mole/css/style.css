@@ -1,0 +1,108 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "open sans", sans-serif;
+    font-size: 1.5rem;
+}
+
+.container {
+    border: 0.7rem solid rgb(69, 65, 65);
+    width: 40%;
+    margin: 0rem auto;
+}
+
+.title {
+    text-align: center;
+}
+
+.display {
+    display: flex;
+    justify-content: space-between;
+    padding: 0rem 2rem;
+}
+
+.display>h3 {
+    border-bottom: 4px solid gray;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    border: 0.5rem solid black;
+    margin: 1rem;
+}
+
+.square {
+    width: 7rem;
+    height: 6rem;
+    border: 2px solid black;
+    margin: 0.5rem;
+    cursor: pointer;
+}
+
+.button {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.stop {
+    font-size: 1rem;
+    margin: 0.7rem;
+    padding: 0.2rem 1rem;
+    border-radius: 0.4rem;
+    background-color: rgb(227, 15, 58);
+    cursor: pointer;
+    transition: all 0.7s;
+    font-weight: 600;
+}
+
+.stop:hover {
+    background-color: rgb(117, 6, 6);
+    transform: scale(1.02);
+}
+
+.btn {
+    font-size: 1rem;
+    margin: 0.7rem;
+    padding: 0.2rem 1rem;
+    border-radius: 0.4rem;
+    background-color: rgb(62, 175, 236);
+    cursor: pointer;
+    transition: all 0.7s;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background-color: rgb(11, 141, 211);
+    transform: scale(1.02);
+
+}
+
+/* .saquib{
+width: 7rem;
+height: 6rem;
+} */
+.saquib {
+    --c: #8A9B0F;
+    /* the border color */
+    --b: 10px;
+    /* the border thickness*/
+    --g: 5px;
+    /* the gap on hover */
+
+    padding: calc(var(--g) + var(--b));
+    --_g: #0000 25%, var(--c) 0;
+    background:
+        conic-gradient(from 180deg at top var(--b) right var(--b), var(--_g)) var(--_i, 200%) 0 /200% var(--_i, var(--b)) no-repeat,
+        conic-gradient(at bottom var(--b) left var(--b), var(--_g)) 0 var(--_i, 200%)/var(--_i, var(--b)) 200% no-repeat;
+    transition: .3s, background-position .3s .3s;
+    cursor: pointer;
+    width: 7rem;
+    height: 6rem;
+}
+
+.saquib:hover {
+    --_i: 100%;
+    transition: .3s, background-size .3s .3s;
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Funcion</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+/*
+    // More way to create function with function key word
+
+    function tenMultiplier(a) {
+        return a * 10;
+    }
+
+    let twentyMultiplier = function (a) {
+        return a * 20;
+    }
+
+    // this  way to create function without function key word
+
+
+    var logSomething = () => {
+        console.log("Hello log me...")
+    }
+
+    var thirtyMultiplier = (a) => {
+        return a * 30;
+    }
+
+    var fourtyMultiplier = (a, b) => a * b; // we can define like this with two para meter arrow function
+
+    var fiftyMultiplier = a => a * 50; //we can also define like this with one parameter arrow function
+
+    console.log(fourtyMultiplier(9, 6));
+
+
+
+    // uses  this key word how this key word work  where point this keyword
+
+    function ageCalculator(YearOfBirth) {
+
+        console.log(this);
+        function hello() {
+            console.log("how are you..");
+            console.log(this);
+        }
+        hello();
+
+        return 2023 - YearOfBirth;
+    }
+
+
+    var obj1 = {
+
+        a: 10,
+        ageCalculator: function (YearOfBirth) {
+
+            console.log(this);
+
+            function hello() {
+                console.log("Hmmm I am fine....");
+                console.log(this);
+            }
+            hello();
+            return 2023 - YearOfBirth;
+        }
+    }
+
+    console.log(ageCalculator(1990));
+
+    console.log(obj1.ageCalculator(1996));
+
+    let person={
+        name:"saquib",
+        dob:1990,
+        ageClaculator:function(){
+            let age=2023 - this.dob;
+            console.log(this);
+
+
+            function yearOfRetirement(){
+                console.log("hello");
+                console.log(this);
+
+                return 60- age;
+
+            }
+           console.log(yearOfRetirement());
+
+            return age ;
+        }
+    }
+
+    console.log(person.ageClaculator());
+
+
+
+let person1={
+        name:"saquib",
+        dob:1990,
+        ageClaculator:function(){
+            console.log(2023-this.dob);
+
+                let mydob = this; // one way to do this
+                function yearOfRetirement(){
+                let age =2023-mydob.dob;
+                console.log(60-age);
+             }
+           console.log(yearOfRetirement());
+
+        }
+    }
+
+    console.log(person1.ageClaculator());
+
+    let person2={
+        name:"saquib",
+        dob:1990,
+        ageClaculator:function(){
+            console.log(2023-this.dob);
+
+               let yearOfRetirement = ()=>{
+                let age = 2023 - this.dob;
+                return 60-age;
+               }
+           console.log(yearOfRetirement());
+               return "hello";
+        }
+    }
+
+    console.log(person2.ageClaculator());
+*/
+
+let person3 ={
+    name:"saquib",
+    yob:1990,
+    ageCalculator:()=>{
+        console.log(this);
+        console.log(2023-this.yob);
+    }
+}
+console.log(person3.ageCalculator());
+
+let person4 = {
+    name:"saquib",
+    yob:1990,
+
+    ageCalculator:function(){
+        console.log(this);
+        console.log(2023-this.yob);
+        let age= ()=> {
+            console.log(this)
+          console.log(2023-this.yob);
+        }
+        age();
+    }
+}
+console.log(person4.ageCalculator());
+</script>
+
+</html>

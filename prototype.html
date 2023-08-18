@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototypes of Array , function , object</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+
+
+
+
+    function person(name, role, yearOfBirth) {
+        this.name = name;
+        this.role = role;
+        this.yearOfBirth = yearOfBirth;
+
+
+        //    this.yearOfBirth=yearOfBirth; 
+
+        // this function is inside the function constructor  . when you create instance multiple time 
+        // person execute automaticall multiple time then the memory consume multiple time.
+
+        //---------------------------------
+        //    this.fees=function(){
+        //     if(this.role=="Student")
+        //         console.log("fees is :- 85000");
+        //     else
+        //         console.log("No need to pay because you are't Student");
+        //    }
+    }
+
+    person.prototype.yearOfBirth="1990";
+
+    // this fuction is initilize inside person prototype 
+    // when you instance the person this function is inside the person prototype 
+
+
+    function hopeso() {
+
+    }
+
+
+    hopeso.prototype = Object.create(person.prototype);
+
+
+    hopeso.prototype.ageCalculator = function () {
+        return 2023 - this.yearOfBirth;
+    }
+
+
+
+    // person.prototype.yearOfBirth;
+    person.prototype.fees = function () {
+
+        if (this.role == "Student")
+            console.log("fees is :- 85000");
+        else
+            console.log("No need to pay because you are't Student");
+
+    }
+
+
+    let kaif = new person("kaif", "teacher", 1997);
+
+    // console.log(kaif.name);
+    // console.log(kaif.role);
+    // console.log(kaif.fees());
+    // console.log(kaif.yearOfBirth);
+    // console.log(kaif);
+
+
+    // let avishek = new person("kaif","teacher");
+
+    // console.log(kaif.name);
+    // console.log(kaif.role);
+    // console.log(kaif.fees());
+    // console.log(kaif);
+    // console.log(person);
+
+
+    let raja = new hopeso();
+
+    console.log(raja.ageCalculator());
+   
+</script>
+
+</html>

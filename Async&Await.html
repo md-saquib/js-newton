@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async&Await</title>
+
+    <style>
+        .style{
+            width: 10rem;
+            height: 10rem;
+            border: 3px solid black;
+        }
+        .divstyle{
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+<script>
+
+
+    let userDetail = (userName) => {
+        return new Promise((resolve, reject) => {
+            if (userName == "saquib") {
+                console.log(userName);
+                resolve("1234");
+            }
+            else {
+                reject("user Not valid...");
+            }
+        })
+    }
+
+    let friendList = (userId) => {
+        return new Promise((res, rej) => {
+            if (userId == 1234) {
+                console.log("successfully get friend list..");
+                let friendList = ["kaif", "raja", "abhishek", "fasahat", "sam"];
+                res(friendList);
+            }
+            else {
+                rej("friendList Not found..")
+            }
+        })
+    }
+
+    let userMassage = (friendList) => {
+        return new Promise((res, rej) => {
+            if (friendList) {
+                let obj = {};
+                for (let i = 0; i < friendList.length; i++) {
+                    obj[friendList[i]] = "massage for " + friendList[i];
+                }
+                res(obj);
+            } else {
+                rej("friends Not found...")
+            }
+        })
+    }
+
+    // this done with normal function 
+
+    // async function runpromise() {
+    //     try {
+    //         let userId = await userDetail("saquib", "dhoka");
+    //         let friends = await friendList(userId);
+    //         let userMsg = await userMassage(friends);
+    //         return userMsg;
+    //     }
+    //     catch (error) {
+    //         console.log("Error is ---> " + error);
+    //     }
+    // }
+    // runpromise()
+    //     .then((data) => {
+    //         console.log(data);
+    //     })
+
+
+
+    //this done with arrow function
+
+    let runpromise1 = async () => {
+        try {
+            let userId = await userDetail("saquib");
+            let friends = await friendList(userId);
+            let userMsg = await userMassage(friends);
+            return userMsg ;
+
+        }
+        catch (error) {
+            console.log("Error is ---> " + error);
+
+        }
+    }
+    runpromise1()
+    .then((data)=>{
+        console.log(data);
+    })
+
+
+    let fetchdata = async ()=>{
+        let data = await fetch("https://fakestoreapi.com/products")
+        return data.json();
+    }
+
+    let body = document.body;
+
+    fetchdata()
+    .then((data)=>{
+        for(let i= 0; i<data.length; i++){
+            let divtag = document.createElement("div")
+            body.appendChild(divtag);
+            body.className="divstyle";
+
+            let imgtag = document.createElement("img");
+            divtag.appendChild(imgtag)
+            imgtag.className="style";
+            imgtag.src=data[i].image;
+
+        }    })
+
+
+
+</script>
+
+</html>

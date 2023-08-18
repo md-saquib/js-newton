@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>createElementByDOM</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    
+    let body = document.body;
+    let table = document.createElement("table");
+    let thead = document.createElement("thead");
+    let tbody = document.createElement("tbody");
+    table.appendChild(thead);
+    table.appendChild(tbody);
+    body.appendChild(table);
+    
+    function createTableRow(tr1) {
+        let tr = document.createElement("tr");
+        tr1.appendChild(tr);
+
+        if (thead == tr1) {
+
+            let arr = ["S.no", "Name", "City", "Age", "Address"];
+            for (let i = 0; i < arr.length; i++) {
+                createTh(arr[i]);
+            }
+        }
+        else if(tr1==tbody){
+            let arr =["1","Saquib","Katihar","24","Bata chowk"];
+            for(let i=0; i<arr.length; i++){
+                createTd(arr[i])
+            }
+        }
+
+        function createTh(headData) {
+            let th = document.createElement("th");
+            th.innerText = headData;
+            tr.appendChild(th);
+        }
+
+
+        function createTd(tableData) {
+            let td = document.createElement("td");
+            td.innerText = tableData;
+            tr.appendChild(td);
+        }
+    }
+    createTableRow(thead);
+    createTableRow(tbody);
+    createTableRow(tbody);
+    createTableRow(tbody);
+    createTableRow(tbody);
+    createTableRow(tbody);
+</script>
+
+</html>

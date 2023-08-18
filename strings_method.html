@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings_methods</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    // string method start from here lot of string method avilable here
+
+
+    let str = "hello how are you guys . fine and what about you guys.."
+
+    // string length  find the length of string ..
+
+    let value = str.length
+
+    console.log(value);
+
+    // slicing in string  ... in term of positive and negative value
+
+    let value1 = str.slice(4, 10)
+
+    console.log(value1);
+
+    let value2 = str.slice(-10, -3)
+
+    console.log(value2);
+
+    let value3 = str.slice(3, 15);
+
+    console.log(value3);
+
+    console.log(str);
+
+    //substring method in string
+
+    // The substring() method extract a part of a string and returns the extracted parts in a new string:
+
+    let value4 = str.substring(10, 30);
+
+    console.log(value4);
+
+    console.log(value4.length);
+
+    // substr method in string
+
+    // The substr() method extract a part of a string and returns the extracted parts in a new string:
+
+    let value5 = str.substr(30, 8)
+
+    console.log(value5);
+    console.log(str);
+
+
+//     Replacing String Content
+
+//     The replace() method does not change the string it is called on.
+
+// The replace() method returns a new string.
+
+// The replace() method replaces only the first match
+
+
+let str1= "saquib sudden placed in google saquib Saquib Saquib";
+
+console.log(str1);
+
+let value6= str1.replace("saquib","student");  // primary and universal way to replace string
+
+console.log(value6);
+
+value6= str1.replace(/SAQUIB/i,"student");      // secondry way through backslash with small (i) with capital input
+                                                  //       value6= str1.replace(/SAQUIB/i,"student")   
+
+console.log(value6);
+
+value6 = str1.replace(/saquib/g,"student")
+
+
+console.log(value6);
+
+
+// replaceAll string method ...
+
+let value7 = str1.replaceAll("saquib","hello")
+
+console.log(value7)
+
+value7 = str1.replaceAll(/saquib/g,"smart") // if you use regular expression must be used global flag
+
+console.log(value7)
+
+
+// trim and trimend method in string
+
+
+let text1 = "     Hello World!     ";
+let text2 = text1.trimEnd();//  remove space at the end of the string
+
+let text3 = text1.trim();  //remove space both side of the string--
+
+console.log(text1);
+console.log(text2);
+console.log(text3);
+
+
+
+</script>
+
+</html>

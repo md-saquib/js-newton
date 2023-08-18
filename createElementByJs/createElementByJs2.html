@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreateElementByJs2</title>
+</head>
+
+<body>
+
+
+</body>
+<script>
+
+    let body = document.body;
+    let table = document.createElement("table");
+    body.appendChild(table);
+    let thead = document.createElement("thead");
+    let tbody = document.createElement("tbody");
+    table.appendChild(thead);
+    table.appendChild(tbody);
+
+    function createTh(data) {
+        let th = document.createElement("th");
+        th.innerText = data;
+        return th;
+    }
+
+    function createTd(data){
+        let td = document.createElement("td");
+        td.innerText= data;
+        return td;
+    }
+    function createTr(data) {
+        let tr = document.createElement("tr");
+
+        if (data[0]=="S.No") {
+
+           for(let i=0; i<data.length; i++){
+            tr.appendChild(createTh(data[i]));
+          }
+        }
+        else
+         {
+            for(let i=0; i<data.length; i++){
+            tr.appendChild(createTd(data[i]));
+
+            }
+        }
+
+        return tr;
+    }
+    console.log(body)
+    thead.appendChild(createTr(["S.No", "Name", "Age", "Cast", "Address"]));
+    tbody.appendChild(createTr(["1", "Saquib", "24", "Muslim", "Delhi"]));
+    tbody.appendChild(createTr(["2", "Kaif", "23", "Muslim", "Katihar"]));
+    tbody.appendChild(createTr(["3", "Raja", "22", "Hindu", "Katihar"]));
+    tbody.appendChild(createTr(["4", "abishek", "23", "Hindu", "Katihar"]));
+   
+
+</script>
+
+</html>

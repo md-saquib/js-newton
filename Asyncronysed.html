@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asyncronyse Coding</title>
+</head>
+
+<body>
+    <h1>Let us do something with Asyncronyse programming</h1>
+
+</body>
+<script>
+    // starting of asyncronyse coding
+
+    //---------------------this is good but there is one more way to do ------
+    // but there is many problem  called callback hell
+
+    // function userValidation(userName,password){
+    //     if(userName=="saquib"){
+    //         console.log(userName);
+    //         console.log(password);
+    //         //get from database 
+    //         let id = 124;
+    //         setTimeout(userDetail,1000,"123")
+    //     }else{
+    //         console.log("user Not valid..");
+    //     }
+    // }
+
+    // function userDetail(id){
+    //     if(id==123){
+    //         //get from data base 
+    //         let friendList = ["kaif ","abhishek","raja","fasahat","sam"];
+    //         console.log("friendList successfully fetched");
+    //         setTimeout(userChat,1000,friendList)
+    //     }else{
+    //         console.log("id did't match...");
+    //     }
+    // }
+
+    // function userChat(friendList){
+    //     if(friendList){
+    //         for(let i=0; i<friendList.length; i++){
+    //             setTimeout(()=>{
+    //                 console.log(`${i+1} : massage for ${friendList[i]}`);
+    //             },i*1000)
+    //         }
+    //     }else{
+    //         console.log("No chats available..");
+    //     }
+    // }
+
+    // setTimeout(userValidation,1000,"saquib","dhoka123");
+
+
+
+
+
+
+
+    // --------------------this is second way to do this ---------
+
+    // but there is many problem  called callback hell
+
+    // setTimeout((userName, password) => {
+    //     if (userName === "saquib") {
+    //         console.log(userName);
+    //         console.log(password);
+    //         //get id from data base..
+    //         let id = 1234;
+    //         setTimeout((id) => {
+    //             if (id == 1234) {
+    //                 console.log("User detail get successfully..");
+    //                 //get list from data base
+    //                 let friendList = ["kaif", "raja", "abhishek", "fasahat", "sam"];
+    //                 setTimeout((friendList) => {
+    //                     if (friendList) {
+    //                         for (let i = 0; i < friendList.length; i++) {
+    //                             setTimeout(() => {
+    //                                 console.log(`${i + 1} : massage from : ${friendList[i]}`);
+    //                             }, i * 1000)
+    //                         }
+    //                     } else {
+    //                         console.log("user have No chats..");
+    //                     }
+    //                 }, 1000, friendList)
+
+    //             } else {
+    //                 console.log("user details didn't get..");
+    //             }
+
+    //         }, 1000, id)
+    //     } else {
+    //         console.log("invalid user...");
+    //     }
+    // }, 1000, "saquib", "dhoka123");
+
+    // in this method there is lots of function dependencies--
+    // 
+
+
+    //  and callback hell is major problem....
+
+    // for solving callback hell javascript intorduced Promise
+
+    //  -------------> Promise
+
+
+    let userDetail = (userName, password) => {
+        return new Promise((resolve, reject) => {
+            if (userName == "saquib") {
+                console.log(userName + " " + password);
+                resolve("1234");
+            }
+            else {
+                console.log("invalid user by console..");
+                reject("user Not valid...");
+            }
+        })
+    }
+
+    let friendList = (userId) => {
+        return new Promise((res, rej) => {
+            if (userId == 1234) {
+                console.log("successfully get friend list..");
+                let friendList = ["kaif", "raja", "abhishek", "fasahat", "sam"];
+                res(friendList);
+            }
+            else {
+                rej("friendList Not found..")
+            }
+        })
+    }
+
+    let userMassage = (friendList) => {
+        return new Promise((res, rej) => {
+            if (friendList) {
+                let obj = {};
+                for (let i = 0; i < friendList.length; i++) {
+                    obj[friendList[i]] = "massage for " + friendList[i];
+                }
+                res(obj);
+            } else {
+                rej("friends Not found...")
+            }
+        })
+    }
+
+    // this is normal call
+
+    // userDetail("saquib","dhoka123")
+
+    // .then((id)=>{
+    //     console.log(id);
+    // })
+    // .catch((msg)=>{
+    //     console.log(msg);
+    // })
+
+
+    // userDetail("aquib","dhoka123")
+
+    // .then((id)=>{
+    //     console.log(id);
+    // })
+    // .catch((msg)=>{
+    //     console.log(msg);
+    // })
+
+
+    // lets introduce promise chaining 
+
+    // userDetail("saquib","hello123")
+      
+    // .then((id)=>{
+    //     console.log(id);
+    //     return friendList(id);
+
+    // })
+    // .then((Flist)=>{
+    //     console.log(Flist);
+    //     return userMassage(Flist3);
+    // })
+    // .then((Msg)=>{
+    //     console.log(Msg);
+    // })
+    // .catch((error)=>{
+    //     console.log(error);
+    // })
+
+// let introduce Promise.all
+
+        // Promise.all([userDetail("saquib","hello1234"),friendList("1234"),userMassage(["kaif", "raja", "abhishek", "fasahat", "sam"])])
+        // .then((hello)=>{
+        //     console.log(hello);
+        // })
+        // .catch((error)=>{
+        //     console.log(error);
+        // })
+
+// let introduce Promise.allSettled
+
+        // Promise.allSettled([userDetail("saquib","hello1234"),friendList("1234"),userMassage(['kaif', 'raja', 'abhishek', 'fasahat', 'sam'])])
+        // .then((id)=>{
+        //     console.log(id);
+        // })
+        // .catch((error)=>{
+        //     console.log(error);
+        // })
+
+        Promise.race([userDetail("saquib","hello123"),friendList("1234"),userMassage(['kaif', 'raja', 'abhishek', 'fasahat', 'sam'])])
+        .then((data)=>{
+            console.log(data);
+        })
+        .then((id)=>{
+            console.log(id);
+        })
+    
+
+
+</script>
+
+</html>
